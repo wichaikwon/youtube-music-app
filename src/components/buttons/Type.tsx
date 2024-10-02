@@ -40,7 +40,7 @@ const Type = () => {
 
       {!isType && <Default />}
       {isType && (
-        <div>
+        <div className='pl-24'>
           {isType === 'relaxed' && <Relaxed />}
           {isType === 'sleep' && <Sleep />}
           {isType === 'romantic' && <Romantic />}

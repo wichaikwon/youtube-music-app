@@ -33,32 +33,32 @@ export const LayoutContextProvider: React.FC<LayoutProviderProps> = ({ children 
   const onChangeState = (state: string) => {
     setState(state)
   }
-  const getType = () => {
-    switch (state) {
-      case 'relaxed':
-        return 'relaxed'
-      case 'energetic':
-        return 'energetic'
-      case 'feel_good':
-        return 'feel_good'
-      case 'exercise':
-        return 'exercise'
-      case 'travel':
-        return 'travel'
-      case 'party':
-        return 'party'
-      case 'focused':
-        return 'focused'
-      case 'sad':
-        return 'sad'
-      case 'romantic':
-        return 'romantic'
-      case 'sleep':
-        return 'sleep'
-      default:
-        return 'default'
-    }
-  }
+  // const getType = () => {
+  //   switch (state) {
+  //     case 'relaxed':
+  //       return 'relaxed'
+  //     case 'energetic':
+  //       return 'energetic'
+  //     case 'feel_good':
+  //       return 'feel_good'
+  //     case 'exercise':
+  //       return 'exercise'
+  //     case 'travel':
+  //       return 'travel'
+  //     case 'party':
+  //       return 'party'
+  //     case 'focused':
+  //       return 'focused'
+  //     case 'sad':
+  //       return 'sad'
+  //     case 'romantic':
+  //       return 'romantic'
+  //     case 'sleep':
+  //       return 'sleep'
+  //     default:
+  //       return 'default'
+  //   }
+  // }
   return (
     <LayoutContext.Provider
       value={{
@@ -69,11 +69,11 @@ export const LayoutContextProvider: React.FC<LayoutProviderProps> = ({ children 
         onChangeState,
       }}>
       <div className="flex h-full w-full bg-gradient-to-b from-gray-900 to-black text-white">
-          <Sidebar />
-          <div className="flex relative w-full flex-col">
-            <Navbar />
-            {getType()}
-            {children}
+        <Sidebar />
+        <div className="relative flex w-full flex-col">
+          <Navbar />
+          {/* {getType()} */}
+          {children}
         </div>
       </div>
     </LayoutContext.Provider>

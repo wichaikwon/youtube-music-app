@@ -1,4 +1,4 @@
-import {  useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 
 type VDO = {
@@ -137,15 +137,15 @@ const Default = () => {
       container.addEventListener('scroll', () => {
         const maxScrollLeft = container.scrollWidth - container.clientWidth
         if (container.scrollLeft <= 0) {
-          setCanScrollLeft(false) 
+          setCanScrollLeft(false)
         } else {
-          setCanScrollLeft(true) 
+          setCanScrollLeft(true)
         }
 
         if (container.scrollLeft >= maxScrollLeft) {
-          setCanScrollRight(false) 
+          setCanScrollRight(false)
         } else {
-          setCanScrollRight(true) 
+          setCanScrollRight(true)
         }
       })
     }
@@ -189,7 +189,10 @@ const Default = () => {
                 <Image
                   src={`/fav/${item.id}.jpg`}
                   alt={`${item}`}
-                  className="h-full w-fit rounded-lg group-hover:opacity-50"
+                  priority
+                  width={1000}
+                  height={1000}
+                  className="h-full w-full rounded-lg object-cover group-hover:opacity-50"
                 />
                 <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 rounded-full transition hover:scale-150">
                   <Image className="m-auto" src="/svg/play.svg" alt="play" width={40} height={40} />
@@ -227,7 +230,7 @@ const Default = () => {
                 alt="less"
                 width={32}
                 height={32}
-                className="h-8 w-8 rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
+                className="rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
               />
             </button>
             <button
@@ -239,7 +242,7 @@ const Default = () => {
                 alt="greater"
                 width={32}
                 height={32}
-                className="h-8 w-8 rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
+                className="rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
               />
             </button>
           </div>
@@ -252,7 +255,7 @@ const Default = () => {
                 <button className="group relative">
                   <Image
                     src={`/mix/${item.id}.jpg`}
-                    className="group-hover:opacity-90"
+                    className="rounded-md group-hover:opacity-90"
                     alt={`${item.id}`}
                     width={284}
                     height={284}
@@ -301,7 +304,7 @@ const Default = () => {
                 alt="less"
                 width={32}
                 height={32}
-                className="h-8 w-8 rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
+                className="rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
               />
             </button>
             <button
@@ -315,7 +318,7 @@ const Default = () => {
                 alt="greater"
                 width={32}
                 height={32}
-                className="h-8 w-8 rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
+                className="rounded-full border border-slate-600 p-2 hover:bg-white hover:bg-opacity-20"
               />
             </button>
           </div>
@@ -329,9 +332,9 @@ const Default = () => {
                     <Image
                       src={`/fast/${item.id}.jpg`}
                       alt={`${item.id}`}
-                      width={64}
-                      height={100}
-                      className="h-fit group-hover:opacity-5"
+                      width={32}
+                      height={32}
+                      className="rounded-md group-hover:opacity-5"
                     />
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100">
                       <Image src="/svg/play.svg" width={20} height={20} alt={`play${item.id}`} />
@@ -414,7 +417,7 @@ const Default = () => {
                 <button className="group relative">
                   <Image
                     src={`/community/${item.id}.jpg`}
-                    className="opacity-95 group-hover:opacity-60"
+                    className="rounded-lg opacity-95 group-hover:opacity-60"
                     alt={`${item.id}`}
                     width={284}
                     height={284}
