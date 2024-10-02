@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState } from 'react'
+import {  useRef, useState } from 'react'
 import Image from 'next/image'
 
 type VDO = {
@@ -186,7 +186,7 @@ const Default = () => {
           {items.map((item, idx) => (
             <div className="group flex h-full shrink-0 flex-col" key={idx} id={`fav-${item}`}>
               <button className="relative">
-                <img
+                <Image
                   src={`/fav/${item.id}.jpg`}
                   alt={`${item}`}
                   className="h-full w-fit rounded-lg group-hover:opacity-50"

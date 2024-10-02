@@ -1,19 +1,11 @@
-import { Fragment, useContext, useEffect, useState } from 'react'
-import { SearchSvg } from '../../../public/svg/SearchSvg'
+import { Fragment, useEffect, useState } from 'react'
 import cn from 'classnames'
-import { TVSvg } from '../../../public/svg/TVSvg'
-import Sidebar from './Sidebar'
-import MenuSvg from '../../../public/svg/MenuSvg'
-import YtmusicSvg from '../../../public/svg/YtmusicSvg'
-import { LayoutContext } from '@/contexts/Layout'
 import Image from 'next/image'
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const { isMenuOpen, openMenu, closeMenu } = useContext(LayoutContext)
-  const toggleMenu = () => {
-    isMenuOpen ? closeMenu() : openMenu()
-  }
+
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {

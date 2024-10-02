@@ -72,6 +72,7 @@ export const LayoutContextProvider: React.FC<LayoutProviderProps> = ({ children 
           <Sidebar />
           <div className="flex relative w-full flex-col">
             <Navbar />
+            {getType()}
             {children}
         </div>
       </div>

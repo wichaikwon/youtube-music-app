@@ -8,7 +8,11 @@ const Sidebar = () => {
   const { isMenuOpen, openMenu, closeMenu } = useContext(LayoutContext)
 
   const toggleMenu = () => {
-    isMenuOpen ? closeMenu() : openMenu()
+    if (isMenuOpen) {
+      closeMenu()
+    } else {
+      openMenu()
+    }
   }
   return (
     <Fragment>

@@ -21,7 +21,7 @@ const Type = () => {
 
   return (
     <Fragment>
-      <div className="flex gap-2 pb-4 px-24 pt-12">
+      <div className="flex gap-2 px-24 pb-4 pt-12">
         {Object.entries(moods).map(([key, value]) => (
           <button
             key={key}
@@ -30,7 +30,8 @@ const Type = () => {
               isType === key ? 'bg-white bg-opacity-100 text-black' : 'hover:bg-opacity-25'
             )}
             onClick={() => {
-              setIsType(key), onChangeState(key)
+              setIsType(key)
+              onChangeState(key)
             }}>
             <span className="text-sm">{value}</span>
           </button>
