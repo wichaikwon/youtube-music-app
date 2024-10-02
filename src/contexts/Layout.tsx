@@ -69,14 +69,10 @@ export const LayoutContextProvider: React.FC<LayoutProviderProps> = ({ children 
         onChangeState,
       }}>
       <div className="flex h-full w-full bg-gradient-to-b from-gray-900 to-black text-white">
-        <div className="flex flex-grow">
           <Sidebar />
-          <div className="flex w-full flex-col px-24">
+          <div className="flex relative w-full flex-col">
             <Navbar />
-            <div>
-              {children}
-            </div>
-          </div>
+            {children}
         </div>
       </div>
     </LayoutContext.Provider>

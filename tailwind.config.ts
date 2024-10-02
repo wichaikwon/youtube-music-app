@@ -10,7 +10,9 @@ const config: Config = {
     extend: {
       spacing: {
         '120': '30rem',
-        '77' : '19.2rem'
+        '77' : '19.2rem',
+        '62.5' : '15.625rem',
+        '71' : '17.75rem'
       },
       fontSize: {
         xxs: '0.5rem',

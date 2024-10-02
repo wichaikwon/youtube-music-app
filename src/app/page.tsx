@@ -1,11 +1,6 @@
-import Homepage from "@/components/partials/Homepage"
-import { Fragment } from "react"
+import Homepage from '@/components/partials/Homepage'
 
 const App = () => {
-  return (
-    <Fragment>
-      <Homepage />
-    </Fragment>
-  )
+  return <Homepage />
 }
 export default App
