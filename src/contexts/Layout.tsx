@@ -1,4 +1,6 @@
 'use client'
+import Footer from '@/components/navagations/Footer'
+import FooterModal from '@/components/navagations/FooterModal'
 import Navbar from '@/components/navagations/Navbar'
 import Sidebar from '@/components/navagations/Sidebar'
 import { createContext, useState } from 'react'
@@ -25,40 +27,15 @@ interface LayoutProviderProps {
 
 export const LayoutContextProvider: React.FC<LayoutProviderProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [state, setState] = useState('home_page')
-
+  const [state, setState] = useState('')
+  const [changeDropUp, setChangeDropUp] = useState(false)
   const openMenu = () => setIsMenuOpen(true)
   const closeMenu = () => setIsMenuOpen(false)
 
   const onChangeState = (state: string) => {
     setState(state)
   }
-  // const getType = () => {
-  //   switch (state) {
-  //     case 'relaxed':
-  //       return 'relaxed'
-  //     case 'energetic':
-  //       return 'energetic'
-  //     case 'feel_good':
-  //       return 'feel_good'
-  //     case 'exercise':
-  //       return 'exercise'
-  //     case 'travel':
-  //       return 'travel'
-  //     case 'party':
-  //       return 'party'
-  //     case 'focused':
-  //       return 'focused'
-  //     case 'sad':
-  //       return 'sad'
-  //     case 'romantic':
-  //       return 'romantic'
-  //     case 'sleep':
-  //       return 'sleep'
-  //     default:
-  //       return 'default'
-  //   }
-  // }
+
   return (
     <LayoutContext.Provider
       value={{
@@ -68,14 +45,19 @@ export const LayoutContextProvider: React.FC<LayoutProviderProps> = ({ children 
         currentState: state,
         onChangeState,
       }}>
-      <div className="flex h-full w-full bg-gradient-to-b from-gray-900 to-black text-white">
+      <div className="flex h-full w-full">
         <Sidebar />
         <div className="relative flex w-full flex-col">
           <Navbar />
-          {/* {getType()} */}
-          {children}
+          <div className="px-24">{children}</div>
+          <FooterModal changeDropUp={changeDropUp} setChangeDropUp={setChangeDropUp} />
         </div>
       </div>
+      <Footer
+        changeDropUp={changeDropUp}
+        setChangeDropUp={setChangeDropUp}
+        className="sticky bottom-0 z-30 flex h-16 items-center justify-between bg-gray-800 px-4"
+      />
     </LayoutContext.Provider>
   )
 }

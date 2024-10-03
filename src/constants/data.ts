@@ -1,303 +1,118 @@
-// // Define types for each part of the data
+import { VDO } from '@/constants/type'
+import { MIX } from '@/constants/type'
+import { QUICK } from '@/constants/type'
 
-// interface Track {
-//     id: string;
-//     title: string;
-//     artist: string;
-//     album?: string; // Optional since not all tracks have an album associated
-//     duration: string;
-//     image_url: string;
-//   }
-  
-//   interface Playlist {
-//     id: string;
-//     title: string;
-//     description: string;
-//     image_url: string;
-//     tracks: Track[];
-//   }
-  
-//   interface Genre {
-//     id: string;
-//     name: string;
-//     image_url: string;
-//     playlists: Pick<Playlist, 'id' | 'title' | 'description'>[]; // Only include relevant fields
-//   }
-  
-//   interface Album {
-//     id: string;
-//     title: string;
-//     artist: string;
-//     release_year: string;
-//     tracks: Pick<Track, 'id' | 'title' | 'duration'>[]; // Only include relevant fields
-//     image_url: string;
-//   }
-  
-//   interface Trending {
-//     new_releases: Track[];
-//     top_artists: {
-//       id: string;
-//       name: string;
-//       image_url: string;
-//     }[];
-//   }
-  
-//   interface User {
-//     id: string;
-//     name: string;
-//     subscriptions: string[];
-//     recently_played: Track[];
-//   }
-  
-//   // Define Mood interface
-//   interface Mood {
-//     id: string;
-//     name: string; // English name of the mood
-//     description?: string; // Optional description
-//     image_url: string; // Optional image URL
-//   }
-  
-//   // Main structure of the data including moods
-//   interface MusicData {
-//     user: User;
-//     playlists: Playlist[];
-//     genres: Genre[];
-//     albums: Album[];
-//     trending: Trending;
-//     moods: Mood[]; // New moods section
-//   }
-  
-//   // Example usage
-//   const musicData: MusicData = {
-//     user: {
-//       id: "user12345",
-//       name: "John Doe",
-//       subscriptions: [
-//         "YouTube Music Premium",
-//         "YouTube Premium"
-//       ],
-//       recently_played: [
-//         {
-//           id: "track001",
-//           title: "Blinding Lights",
-//           artist: "The Weeknd",
-//           album: "After Hours",
-//           duration: "3:20",
-//           image_url: "https://example.com/images/track001.jpg"
-//         },
-//         {
-//           id: "track002",
-//           title: "Levitating",
-//           artist: "Dua Lipa",
-//           album: "Future Nostalgia",
-//           duration: "3:23",
-//           image_url: "/fav/1.jpg"
-//         }
-//       ]
-//     },
-//     playlists: [
-//       {
-//         id: "playlist001",
-//         title: "Top Hits 2024",
-//         description: "The biggest hits of the year.",
-//         image_url: "https://example.com/images/playlist001.jpg",
-//         tracks: [
-//           {
-//               id: "track001",
-//               title: "Blinding Lights",
-//               artist: "The Weeknd",
-//               duration: "3:20",
-//               image_url: ""
-//           },
-//           {
-//               id: "track002",
-//               title: "Levitating",
-//               artist: "Dua Lipa",
-//               duration: "3:23",
-//               image_url: ""
-//           },
-//           {
-//               id: "track003",
-//               title: "Save Your Tears",
-//               artist: "The Weeknd",
-//               duration: "3:35",
-//               image_url: ""
-//           }
-//         ]
-//       },
-//       {
-//         id: "playlist002",
-//         title: "Chill Vibes",
-//         description: "Relax and unwind with these soothing tracks.",
-//         image_url: "https://example.com/images/playlist002.jpg",
-//         tracks: [
-//           {
-//               id: "track004",
-//               title: "Peaches",
-//               artist: "Justin Bieber",
-//               duration: "3:18",
-//               image_url: ""
-//           },
-//           {
-//               id: "track005",
-//               title: "Good Days",
-//               artist: "SZA",
-//               duration: "4:40",
-//               image_url: ""
-//           }
-//         ]
-//       }
-//     ],
-//     genres: [
-//       {
-//         id: "genre001",
-//         name: "Pop",
-//         image_url: "https://example.com/images/genre001.jpg",
-//         playlists: [
-//           {
-//             id: "playlist001",
-//             title: "Top Hits 2024",
-//             description: "The biggest hits of the year."
-//           },
-//           {
-//             id: "playlist003",
-//             title: "Pop Party",
-//             description: "Your perfect party playlist with the best pop songs."
-//           }
-//         ]
-//       },
-//       {
-//         id: "genre002",
-//         name: "Hip Hop",
-//         image_url: "https://example.com/images/genre002.jpg",
-//         playlists: [
-//           {
-//             id: "playlist004",
-//             title: "Hip Hop Bangers",
-//             description: "The best hip hop tracks to get you moving."
-//           }
-//         ]
-//       }
-//     ],
-//     albums: [
-//       {
-//         id: "album001",
-//         title: "Future Nostalgia",
-//         artist: "Dua Lipa",
-//         release_year: "2020",
-//         tracks: [
-//           {
-//             id: "track002",
-//             title: "Levitating",
-//             duration: "3:23"
-//           },
-//           {
-//             id: "track006",
-//             title: "Don't Start Now",
-//             duration: "3:03"
-//           }
-//         ],
-//         image_url: "https://example.com/images/album001.jpg"
-//       },
-//       {
-//         id: "album002",
-//         title: "After Hours",
-//         artist: "The Weeknd",
-//         release_year: "2020",
-//         tracks: [
-//           {
-//             id: "track001",
-//             title: "Blinding Lights",
-//             duration: "3:20"
-//           },
-//           {
-//             id: "track003",
-//             title: "Save Your Tears",
-//             duration: "3:35"
-//           }
-//         ],
-//         image_url: "https://example.com/images/album002.jpg"
-//       }
-//     ],
-//     trending: {
-//       new_releases: [
-//         {
-//           id: "track007",
-//           title: "Montero (Call Me By Your Name)",
-//           artist: "Lil Nas X",
-//           album: "Montero",
-//           duration: "2:17",
-//           image_url: "https://example.com/images/track007.jpg"
-//         }
-//       ],
-//       top_artists: [
-//         {
-//           id: "artist001",
-//           name: "The Weeknd",
-//           image_url: "https://example.com/images/artist001.jpg"
-//         },
-//         {
-//           id: "artist002",
-//           name: "Dua Lipa",
-//           image_url: "https://example.com/images/artist002.jpg"
-//         }
-//       ]
-//     },
-//     // Example moods section
-//     moods: [
-//       {
-//         id: "mood001",
-//         name: "Relaxed",
-//         description: "Feeling calm and at ease.",
-//         image_url: "https://example.com/images/mood001.jpg"
-//       },
-//       {
-//         id: "mood002",
-//         name: "Energetic",
-//         description: "Full of energy and enthusiasm.",
-//         image_url: "https://example.com/images/mood002.jpg"
-//       },
-//       {
-//         id: "mood003",
-//         name: "Sad",
-//         description: "Feeling down or melancholic.",
-//         image_url: "https://example.com/images/mood003.jpg"
-//       },
-//       {
-//         id: "mood004",
-//         name: "Romantic",
-//         description: "In a loving or affectionate mood.",
-//         image_url: "https://example.com/images/mood004.jpg"
-//       },
-//       {
-//         id: "mood005",
-//         name: "Focused",
-//         description: "Concentrating and productive.",
-//         image_url: "https://example.com/images/mood005.jpg"
-//       },
-//       {
-//         id: "mood006",
-//         name: "Party",
-//         description: "Ready to celebrate and have fun.",
-//         image_url: "https://example.com/images/mood006.jpg"
-//       },
-//       {
-//         id: "mood007",
-//         name: "Travel",
-//         description: "Feeling adventurous and ready to explore.",
-//         image_url: "https://example.com/images/mood007.jpg"
-//       },
-//       {
-//         id: "mood008",
-//         name: "Exercise",
-//         description: "Feeling active and ready to work out.",
-//         image_url: "https://example.com/images/mood008.jpg"
-//       },
-//       {
-//         id: "mood009",
-//         name: "Feel Good",
-//         description: "Feeling happy and content.",
-//         image_url: "https://example.com/images/mood009.jpg"
-//       }
-//     ]
-//   }
+export const items: VDO[] = [
+  {
+    id: 1,
+    title: 'ลอเร็ม อิปซัม',
+    artists: ['ศิลปิน A', 'ศิลปินนะ'],
+    views: 12345678,
+    moods: ['relaxed', 'romantic'],
+  },
+  { id: 2, title: 'ดอลอร์ ซิท อาเมท', artists: ['ศิลปิน B'], views: 23456789, moods: ['energetic', 'party'] },
+  { id: 3, title: 'คอนเซคเททัวร์', artists: ['ศิลปิน C'], views: 34567890, moods: ['exercise', 'feelgood'] },
+  { id: 4, title: 'อะดิพิสซิ่ง เอลิท', artists: ['ศิลปิน D'], views: 45678901, moods: ['feelgood', 'relaxed'] },
+  { id: 5, title: 'เซด โด อีอุสโมด', artists: ['ศิลปิน E'], views: 56789012, moods: ['party', 'energetic'] },
+  { id: 6, title: 'เทมพอร์ อินซิเดนท์', artists: ['ศิลปิน F'], views: 67890123, moods: ['relaxed', 'romantic'] },
+  { id: 7, title: 'อุต ลาโบเร', artists: ['ศิลปิน G'], views: 78901234, moods: ['romantic', 'feelgood'] },
+  { id: 8, title: 'เอ็ท โดโลเร แมกนา', artists: ['ศิลปิน H'], views: 89012345, moods: ['sad', 'relaxed'] },
+  { id: 9, title: 'อาลิกัวม', artists: ['ศิลปิน I'], views: 90123456, moods: ['sleep', 'sad'] },
+  { id: 10, title: 'ยูท เอนิม แอด', artists: ['ศิลปิน J'], views: 101234567, moods: ['travel', 'feelgood'] },
+]
+
+export const items2: MIX[] = [
+  { id: 1, title: 'มิกซ์ของฉัน 1', views: 12345678, moods: ['relaxed', 'feelgood'] },
+  { id: 2, title: 'มิกซ์ของฉัน 2', views: 23456789, moods: ['energetic', 'party'] },
+  { id: 3, title: 'มิกซ์ของฉัน 3', views: 34567890, moods: ['exercise', 'travel'] },
+  { id: 4, title: 'มิกซ์ของฉัน 4', views: 45678901, moods: ['sad', 'sleep'] },
+  { id: 5, title: 'มิกซ์ของฉัน 5', views: 56789012, moods: ['romantic', 'relaxed'] },
+  { id: 6, title: 'มิกซ์ของฉัน 6', views: 67890123, moods: ['feelgood', 'party'] },
+  { id: 7, title: 'มิกซ์ของฉัน 7', views: 78901234, moods: ['energetic', 'travel'] },
+  { id: 8, title: 'มิกซ์ของฉัน 8', views: 89012345, moods: ['exercise', 'relaxed'] },
+  { id: 9, title: 'มิกซ์ของฉัน 9', views: 90123456, moods: ['sad', 'party'] },
+  { id: 10, title: 'มิกซ์ของฉัน 10', views: 101234567, moods: ['romantic', 'feelgood'] },
+  { id: 11, title: 'มิกซ์ของฉัน 11', views: 11111111, moods: ['relaxed', 'sad'] },
+  { id: 12, title: 'มิกซ์ของฉัน 12', views: 22222222, moods: ['energetic', 'exercise'] },
+  { id: 13, title: 'มิกซ์ของฉัน 13', views: 33333333, moods: ['party', 'travel'] },
+  { id: 14, title: 'มิกซ์ของฉัน 14', views: 44444444, moods: ['sleep', 'romantic'] },
+  { id: 15, title: 'มิกซ์ของฉัน 15', views: 55555555, moods: ['feelgood', 'relaxed'] },
+  { id: 16, title: 'มิกซ์ของฉัน 16', views: 66666666, moods: ['sad', 'energetic'] },
+  { id: 17, title: 'มิกซ์ของฉัน 17', views: 77777777, moods: ['exercise', 'party'] },
+  { id: 18, title: 'มิกซ์ของฉัน 18', views: 88888888, moods: ['romantic', 'travel'] },
+  { id: 19, title: 'มิกซ์ของฉัน 19', views: 99999999, moods: ['relaxed', 'sad'] },
+  { id: 20, title: 'มิกซ์ของฉัน 20', views: 10101010, moods: ['energetic', 'feelgood'] },
+  { id: 21, title: 'มิกซ์ของฉัน 21', views: 11111112, moods: ['party', 'sleep'] },
+  { id: 22, title: 'มิกซ์ของฉัน 22', views: 22222224, moods: ['exercise', 'romantic'] },
+  { id: 23, title: 'มิกซ์ของฉัน 23', views: 33333336, moods: ['travel', 'relaxed'] },
+  { id: 24, title: 'มิกซ์ของฉัน 24', views: 44444448, moods: ['sad', 'energetic'] },
+  { id: 25, title: 'มิกซ์ของฉัน 25', views: 55555550, moods: ['feelgood', 'party'] },
+  { id: 26, title: 'มิกซ์ของฉัน 26', views: 66666662, moods: ['romantic', 'exercise'] },
+  { id: 27, title: 'มิกซ์ของฉัน 27', views: 77777774, moods: ['travel', 'relaxed'] },
+  { id: 28, title: 'มิกซ์ของฉัน 28', views: 88888886, moods: ['sad', 'feelgood'] },
+  { id: 29, title: 'มิกซ์ของฉัน 29', views: 99999998, moods: ['energetic', 'party'] },
+  { id: 30, title: 'มิกซ์ของฉัน 30', views: 10101020, moods: ['romantic', 'sleep'] },
+  { id: 31, title: 'มิกซ์ของฉัน 31', views: 11111134, moods: ['relaxed', 'exercise'] },
+  { id: 32, title: 'มิกซ์ของฉัน 32', views: 22222256, moods: ['party', 'sad'] },
+  { id: 33, title: 'มิกซ์ของฉัน 33', views: 33333378, moods: ['feelgood', 'travel'] },
+  { id: 34, title: 'มิกซ์ของฉัน 34', views: 44444490, moods: ['energetic', 'romantic'] },
+  { id: 35, title: 'มิกซ์ของฉัน 35', views: 55555512, moods: ['exercise', 'party'] },
+  { id: 36, title: 'มิกซ์ของฉัน 36', views: 66666624, moods: ['sad', 'relaxed'] },
+  { id: 37, title: 'มิกซ์ของฉัน 37', views: 77777736, moods: ['feelgood', 'romantic'] },
+  { id: 38, title: 'มิกซ์ของฉัน 38', views: 88888848, moods: ['travel', 'exercise'] },
+  { id: 39, title: 'มิกซ์ของฉัน 39', views: 99999960, moods: ['party', 'sad'] },
+  { id: 40, title: 'มิกซ์ของฉัน 40', views: 10101072, moods: ['relaxed', 'energetic'] },
+  { id: 41, title: 'มิกซ์ของฉัน 41', views: 11111184, moods: ['romantic', 'sleep'] },
+  { id: 42, title: 'มิกซ์ของฉัน 42', views: 22222296, moods: ['feelgood', 'exercise'] },
+  { id: 43, title: 'มิกซ์ของฉัน 43', views: 33333408, moods: ['travel', 'party'] },
+  { id: 44, title: 'มิกซ์ของฉัน 44', views: 44444520, moods: ['sad', 'relaxed'] },
+  { id: 45, title: 'มิกซ์ของฉัน 45', views: 55555632, moods: ['energetic', 'romantic'] }
+]
+
+export const items3: QUICK[] = [
+  { id: 1, title: 'อย่าลืมฉัน', artists: ['เปเปอร์ เพลนส์'], views: 12345678, moods: ['energetic', 'party'] },
+  { id: 2, title: 'ตัดใจ', artists: ['พงษ์สิทธิ์ คำภีร์'], views: 23456789, moods: ['relaxed', 'sad'] },
+  { id: 3, title: 'คือเธอ', artists: ['โจอี้ ภูวศิษฐ์'], views: 34567890, moods: ['feel_good', 'romantic'] },
+  { id: 4, title: 'ปล่อย', artists: ['เจนนิเฟอร์ คิ้ม'], views: 45678901, moods: ['exercise', 'focused'] },
+  { id: 5, title: 'ทางออก', artists: ['แสตมป์ อภิวัชร์', 'ลุลา'], views: 56789012, moods: ['travel', 'feel_good'] },
+  { id: 6, title: 'ไม่ต้องห่วง', artists: ['แหนม รณเดช'], views: 67890123, moods: ['party', 'energetic'] },
+  { id: 7, title: 'ความเงียบ', artists: ['เป๊ก ผลิตโชค', 'ลิปตา'], views: 78901234, moods: ['focused', 'sad'] },
+  { id: 8, title: 'คืนที่ไม่มีเธอ', artists: ['หนุ่มเสก'], views: 89012345, moods: ['romantic', 'sad'] },
+  { id: 9, title: 'รักเธอเสมอ', artists: ['โปเตโต้', 'อ้อน ลัคนา'], views: 90123456, moods: ['romantic', 'feel_good'] },
+  { id: 10, title: 'คนที่คุ้นเคย', artists: ['นิว จิ๋ว'], views: 101234567, moods: ['sleep', 'relaxed'] },
+  { id: 11, title: 'นาทีที่รอ', artists: ['แดน วรเวช'], views: 12345678, moods: ['energetic', 'travel'] },
+  { id: 12, title: 'ถ้าฉันหายไป', artists: ['นิว จิ๋ว', 'อ๊อฟ ปองศักดิ์'], views: 23456789, moods: ['relaxed', 'romantic'] },
+  { id: 13, title: 'ความรัก', artists: ['ลุลา'], views: 34567890, moods: ['feel_good', 'exercise'] },
+  { id: 14, title: 'มอง', artists: ['เป๊ก ผลิตโชค'], views: 45678901, moods: ['exercise', 'focused'] },
+  { id: 15, title: 'เธอที่รัก', artists: ['ดา เอ็นโดรฟิน'], views: 56789012, moods: ['travel', 'feel_good'] },
+  { id: 16, title: 'ซมซาน', artists: ['บอย พีซเมกเกอร์'], views: 67890123, moods: ['party', 'romantic'] },
+  { id: 17, title: 'จะให้เธอลืม', artists: ['เสก โลโซ'], views: 78901234, moods: ['focused', 'sad'] },
+  { id: 18, title: 'เชื่อใจ', artists: ['เต๋า สมชาย', 'ลุลา'], views: 89012345, moods: ['romantic', 'sad'] },
+  { id: 19, title: 'เธออยู่ไหน', artists: ['อ๊อฟ ปองศักดิ์'], views: 90123456, moods: ['romantic', 'relaxed'] },
+  { id: 20, title: 'ความรักที่เธอให้', artists: ['พงษ์สิทธิ์ คำภีร์'], views: 101234567, moods: ['sleep', 'romantic'] },
+  { id: 21, title: 'ความรักที่เธอให้', artists: ['พงษ์สิทธิ์ คำภีร์', 'เบลล์ นิภาดา'], views: 12345678, moods: ['energetic', 'party'] },
+  { id: 22, title: 'บอกลา', artists: ['สิงโต นำโชค'], views: 23456789, moods: ['relaxed', 'sad'] },
+  { id: 23, title: 'สุดท้าย', artists: ['ลุลา'], views: 34567890, moods: ['feel_good', 'romantic'] },
+  { id: 24, title: 'เพลงสุดท้าย', artists: ['แสตมป์ อภิวัชร์'], views: 45678901, moods: ['exercise', 'travel'] },
+  { id: 25, title: 'หยุดเวลา', artists: ['กอล์ฟ ฟักกลิ้งฮีโร่'], views: 56789012, moods: ['party', 'focused'] },
+  { id: 26, title: 'เธอจะอยู่กับฉัน', artists: ['เจ เจตริน'], views: 67890123, moods: ['romantic', 'sleep'] },
+  { id: 27, title: 'ในวันที่ฝนตก', artists: ['เป๊ก ผลิตโชค'], views: 78901234, moods: ['focused', 'sad'] },
+  { id: 28, title: 'ความหมายของความรัก', artists: ['โบ สุนิตา'], views: 89012345, moods: ['romantic', 'sad'] },
+  { id: 29, title: 'รักที่เราเจ็บ', artists: ['แสตมป์ อภิวัชร์'], views: 90123456, moods: ['sad', 'romantic'] },
+  { id: 30, title: 'ขอโทษ', artists: ['นิว จิ๋ว'], views: 101234567, moods: ['sleep', 'feel_good'] },
+  { id: 31, title: 'น้ำตา', artists: ['ป๊อบ ปองกูล'], views: 12345678, moods: ['energetic', 'sad'] },
+  { id: 32, title: 'อีกครั้ง', artists: ['ป๊อบ ปองกูล'], views: 23456789, moods: ['relaxed', 'romantic'] },
+  { id: 33, title: 'รักเธอเสมอ', artists: ['อ๊อฟ ปองศักดิ์'], views: 34567890, moods: ['feel_good', 'exercise'] },
+  { id: 34, title: 'ไม่ไปไหน', artists: ['ตู่ ภพธร'], views: 45678901, moods: ['exercise', 'focused'] },
+  { id: 35, title: 'เชื่อใจ', artists: ['สิงโต นำโชค'], views: 56789012, moods: ['travel', 'sad'] },
+  { id: 36, title: 'หยุดเวลาที่ไม่รู้จบ', artists: ['วงสปิน'], views: 67890123, moods: ['party', 'focused'] },
+  { id: 37, title: 'ทุกครั้งที่คิดถึง', artists: ['บอย พีซเมกเกอร์'], views: 78901234, moods: ['romantic', 'feel_good'] },
+  { id: 38, title: 'เกิดมาเพื่อรักเธอ', artists: ['ป๊อบ ปองกูล'], views: 89012345, moods: ['energetic', 'sad'] },
+  { id: 39, title: 'ความรักที่เธอให้', artists: ['ลุลา'], views: 90123456, moods: ['romantic', 'sleep'] },
+  { id: 40, title: 'รอ', artists: ['ตั๊กแตน ชลดา'], views: 101234567, moods: ['sleep', 'sad'] },
+  { id: 41, title: 'ถ้าฉันหายไป', artists: ['หนุ่มเสก'], views: 12345678, moods: ['energetic', 'party'] },
+  { id: 42, title: 'เพลงที่มีเธอ', artists: ['ครีม สุดสะแนน'], views: 23456789, moods: ['relaxed', 'romantic'] },
+  { id: 43, title: 'คิดถึง', artists: ['อ๊อฟ ปองศักดิ์'], views: 34567890, moods: ['feel_good', 'exercise'] },
+  { id: 44, title: 'เธอคือใคร', artists: ['ฟิล์ม รัฐภูมิ'], views: 45678901, moods: ['exercise', 'sad'] },
+  { id: 45, title: 'นาทีที่รอ', artists: ['แดน วรเวช'], views: 56789012, moods: ['travel', 'romantic'] },
+];

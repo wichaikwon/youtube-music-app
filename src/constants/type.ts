@@ -1,14 +1,22 @@
-const moods: { [key: string]: string } = {
-    energetic: 'กระปรี้กระเปร่า',
-    relaxed: 'ผ่อนคลาย',
-    feel_good: 'รู้สึกดี',
-    exercise: 'ออกกำลังกาย',
-    travel: 'เดินทาง',
-    party: 'ปาร์ตี้',
-    focused: 'จอจ่อ',
-    sad: 'เศร้า',
-    romantic: 'โรแมนติก',
-    sleep: 'การนอนหลับ'
-  }
-  
-  export default moods
+
+export interface VDO {
+  id: number
+  title: string
+  artists: string[]
+  views: number
+  moods?: string[]
+}
+export interface MIX {
+  id: number;
+  title: string;
+  views: number;
+  moods?: string[];
+}
+
+export type QUICK = {
+  id: number
+  title: string
+  artists: string[]
+  views: number
+  moods?: string[]
+}

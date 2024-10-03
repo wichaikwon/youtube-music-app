@@ -1,6 +1,6 @@
-import Homepage from '@/components/partials/Homepage'
+import Type from '@/components/buttons/Type'
 
 const App = () => {
-  return <Homepage />
+  return <Type />
 }
 export default App

@@ -4,26 +4,34 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* Default transparent scrollbar */
 ::-webkit-scrollbar {
-    width: 8px; /* Adjust width as needed */
-    height: 8px; /* Adjust height for horizontal scrollbars */
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: transparent; /* Transparent track by default */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: transparent; /* Transparent thumb by default */
-    border-radius: 4px; /* Optional: Rounded corners */
-  }
-  
-  /* Show scrollbar when hovering over the container */
-  .scroll-container:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.3); /* Visible thumb on hover */
-  }
-  
-  .scroll-container:hover::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.6); /* Darker thumb when hovering the scrollbar itself */
-  }
+  width: 0px; /* Adjust width as needed */
+  height: 8px; /* Adjust height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track by default */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Transparent thumb by default */
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
+/* Show scrollbar when hovering over the container */
+.scroll-container:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3); /* Visible thumb on hover */
+}
+
+.scroll-container:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* Darker thumb when hovering the scrollbar itself */
+}
+
+body {
+  background: #000; /* Fallback color */
+  /* background: linear-gradient(to bottom, #1a1a1a, #4a4a4a); */
+  color: white; /* Text color */
+}

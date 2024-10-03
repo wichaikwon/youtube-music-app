@@ -29,12 +29,11 @@ const Navbar: React.FC = () => {
           isScrolled ? 'bg-black shadow-md' : 'bg-transparent'
         )}>
         <div className="flex items-center justify-between">
-          {/* {isScrolled && <div className={cn('flex', isMenuOpen ? 'w-64' : 'pr-77 ')} />} */}
           <label className="flex w-120 items-center gap-4 rounded-lg bg-white bg-opacity-20 px-4 py-2">
             <Image src="/svg/search.svg" width={24} height={24} alt="search-bar" />
             <input
               placeholder="ค้นหาเพลง อัลบั้ม ศิลปิน พอดแคสต์"
-              className="w-full bg-transparent text-white outline-none"
+              className="w-full bg-transparent  outline-none"
             />
           </label>
         </div>
