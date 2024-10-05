@@ -2,7 +2,7 @@
 import { Fragment, useContext, useState } from 'react'
 import cn from 'classnames'
 import { LayoutContext } from '@/contexts/Layout'
-import HomePage from '../partials/HomePage'
+import HomePage from '@/components/partials/HomePage'
 import moods from '@/constants/moods'
 
 const Type: React.FC = () => {
