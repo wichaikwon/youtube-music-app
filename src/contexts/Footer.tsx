@@ -81,7 +81,7 @@ export const FooterContextProvider: React.FC<FooterProviderProps> = ({ children 
         setChangeDropUp,
       }}>
       {children}
-      <div className="fixed bottom-0 z-40 flex h-16 w-full items-center justify-between bg-gray-800 px-8">
+      <div className="fixed bottom-0 z-30 flex h-16 w-full items-center justify-between bg-gray-800 px-8">
         <div className="flex gap-4">
           <button>
             <Image src="/svg/playprevious.svg" alt="footer-previous-play" width={32} height={32} />

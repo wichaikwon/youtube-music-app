@@ -11,8 +11,8 @@ const Type: React.FC = () => {
 
   return (
     <Fragment>
-      <div className="flex w-full flex-col px-24 py-24">
-        <div className="flex gap-2 pb-12 pt-12">
+      <div className="flex w-full flex-col px-24 py-12">
+        <div className="flex gap-2 pb-12">
           {Object.entries(moods).map(([key, value]) => (
             <button
               key={key}

@@ -1,14 +1,14 @@
 import { items2 } from '@/constants/data'
-import { RouterContext } from '@/contexts/Router'
 import usePagination from '@/hooks/Paginations'
 import Image from 'next/image'
-import { Fragment, useContext } from 'react'
+import { useRouter } from 'next/navigation'
+import { Fragment } from 'react'
 
 interface MixProps {
   mood?: string
 }
 const Mix: React.FC<MixProps> = ({ mood = '' }) => {
-  const router = useContext(RouterContext)
+  const router = useRouter()
   const itemsPerPage = 5
   const filteredItems = items2?.filter((i) => (mood ? i.moods?.includes(mood) : i))
   const { currentPage, totalPages, paginatedData, nextPage, prevPage } = usePagination(filteredItems, itemsPerPage)
