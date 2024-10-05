@@ -2,7 +2,7 @@
 import { Fragment, useContext, useState } from 'react'
 import cn from 'classnames'
 import { LayoutContext } from '@/contexts/Layout'
-import HomePage from '@/components/partials/HomePage'
+import Home from '@/components/partials/Home'
 import moods from '@/constants/moods'
 
 const Type: React.FC = () => {
@@ -29,7 +29,7 @@ const Type: React.FC = () => {
           ))}
         </div>
 
-        <HomePage mood={isType} />
+        <Home mood={isType} />
       </div>
     </Fragment>
   )

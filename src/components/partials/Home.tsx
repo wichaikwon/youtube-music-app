@@ -14,7 +14,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
     .map(({ value }) => value)
 }
 
-const HomePage: React.FC<isType> = ({ mood }) => {
+const Home: React.FC<isType> = ({ mood }) => {
   const [shuffledComponents, setShuffledComponents] = useState<JSX.Element[]>([])
   useEffect(() => {
     const components = [
@@ -31,4 +31,4 @@ const HomePage: React.FC<isType> = ({ mood }) => {
   return <div>{shuffledComponents}</div>
 }
 
-export default HomePage
+export default Home
