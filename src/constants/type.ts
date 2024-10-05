@@ -1,4 +1,3 @@
-
 export interface VDO {
   id: number
   title: string
@@ -7,10 +6,10 @@ export interface VDO {
   moods?: string[]
 }
 export interface MIX {
-  id: number;
-  title: string;
-  views: number;
-  moods?: string[];
+  id: number
+  title: string
+  views: number
+  moods?: string[]
 }
 
 export type QUICK = {

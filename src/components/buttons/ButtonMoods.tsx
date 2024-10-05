@@ -11,7 +11,7 @@ const Type: React.FC = () => {
 
   return (
     <Fragment>
-      <div className="flex w-full flex-col">
+      <div className="flex w-full flex-col px-24 py-24">
         <div className="flex gap-2 pb-12 pt-12">
           {Object.entries(moods).map(([key, value]) => (
             <button
@@ -29,7 +29,7 @@ const Type: React.FC = () => {
           ))}
         </div>
 
-         <HomePage mood={isType} />
+        <HomePage mood={isType} />
       </div>
     </Fragment>
   )

@@ -66,7 +66,7 @@ export const items2: MIX[] = [
   { id: 42, title: 'มิกซ์ของฉัน 42', views: 22222296, moods: ['feelgood', 'exercise'] },
   { id: 43, title: 'มิกซ์ของฉัน 43', views: 33333408, moods: ['travel', 'party'] },
   { id: 44, title: 'มิกซ์ของฉัน 44', views: 44444520, moods: ['sad', 'relaxed'] },
-  { id: 45, title: 'มิกซ์ของฉัน 45', views: 55555632, moods: ['energetic', 'romantic'] }
+  { id: 45, title: 'มิกซ์ของฉัน 45', views: 55555632, moods: ['energetic', 'romantic'] },
 ]
 
 export const items3: QUICK[] = [
@@ -81,7 +81,13 @@ export const items3: QUICK[] = [
   { id: 9, title: 'รักเธอเสมอ', artists: ['โปเตโต้', 'อ้อน ลัคนา'], views: 90123456, moods: ['romantic', 'feel_good'] },
   { id: 10, title: 'คนที่คุ้นเคย', artists: ['นิว จิ๋ว'], views: 101234567, moods: ['sleep', 'relaxed'] },
   { id: 11, title: 'นาทีที่รอ', artists: ['แดน วรเวช'], views: 12345678, moods: ['energetic', 'travel'] },
-  { id: 12, title: 'ถ้าฉันหายไป', artists: ['นิว จิ๋ว', 'อ๊อฟ ปองศักดิ์'], views: 23456789, moods: ['relaxed', 'romantic'] },
+  {
+    id: 12,
+    title: 'ถ้าฉันหายไป',
+    artists: ['นิว จิ๋ว', 'อ๊อฟ ปองศักดิ์'],
+    views: 23456789,
+    moods: ['relaxed', 'romantic'],
+  },
   { id: 13, title: 'ความรัก', artists: ['ลุลา'], views: 34567890, moods: ['feel_good', 'exercise'] },
   { id: 14, title: 'มอง', artists: ['เป๊ก ผลิตโชค'], views: 45678901, moods: ['exercise', 'focused'] },
   { id: 15, title: 'เธอที่รัก', artists: ['ดา เอ็นโดรฟิน'], views: 56789012, moods: ['travel', 'feel_good'] },
@@ -90,7 +96,13 @@ export const items3: QUICK[] = [
   { id: 18, title: 'เชื่อใจ', artists: ['เต๋า สมชาย', 'ลุลา'], views: 89012345, moods: ['romantic', 'sad'] },
   { id: 19, title: 'เธออยู่ไหน', artists: ['อ๊อฟ ปองศักดิ์'], views: 90123456, moods: ['romantic', 'relaxed'] },
   { id: 20, title: 'ความรักที่เธอให้', artists: ['พงษ์สิทธิ์ คำภีร์'], views: 101234567, moods: ['sleep', 'romantic'] },
-  { id: 21, title: 'ความรักที่เธอให้', artists: ['พงษ์สิทธิ์ คำภีร์', 'เบลล์ นิภาดา'], views: 12345678, moods: ['energetic', 'party'] },
+  {
+    id: 21,
+    title: 'ความรักที่เธอให้',
+    artists: ['พงษ์สิทธิ์ คำภีร์', 'เบลล์ นิภาดา'],
+    views: 12345678,
+    moods: ['energetic', 'party'],
+  },
   { id: 22, title: 'บอกลา', artists: ['สิงโต นำโชค'], views: 23456789, moods: ['relaxed', 'sad'] },
   { id: 23, title: 'สุดท้าย', artists: ['ลุลา'], views: 34567890, moods: ['feel_good', 'romantic'] },
   { id: 24, title: 'เพลงสุดท้าย', artists: ['แสตมป์ อภิวัชร์'], views: 45678901, moods: ['exercise', 'travel'] },
@@ -106,7 +118,13 @@ export const items3: QUICK[] = [
   { id: 34, title: 'ไม่ไปไหน', artists: ['ตู่ ภพธร'], views: 45678901, moods: ['exercise', 'focused'] },
   { id: 35, title: 'เชื่อใจ', artists: ['สิงโต นำโชค'], views: 56789012, moods: ['travel', 'sad'] },
   { id: 36, title: 'หยุดเวลาที่ไม่รู้จบ', artists: ['วงสปิน'], views: 67890123, moods: ['party', 'focused'] },
-  { id: 37, title: 'ทุกครั้งที่คิดถึง', artists: ['บอย พีซเมกเกอร์'], views: 78901234, moods: ['romantic', 'feel_good'] },
+  {
+    id: 37,
+    title: 'ทุกครั้งที่คิดถึง',
+    artists: ['บอย พีซเมกเกอร์'],
+    views: 78901234,
+    moods: ['romantic', 'feel_good'],
+  },
   { id: 38, title: 'เกิดมาเพื่อรักเธอ', artists: ['ป๊อบ ปองกูล'], views: 89012345, moods: ['energetic', 'sad'] },
   { id: 39, title: 'ความรักที่เธอให้', artists: ['ลุลา'], views: 90123456, moods: ['romantic', 'sleep'] },
   { id: 40, title: 'รอ', artists: ['ตั๊กแตน ชลดา'], views: 101234567, moods: ['sleep', 'sad'] },
@@ -115,4 +133,4 @@ export const items3: QUICK[] = [
   { id: 43, title: 'คิดถึง', artists: ['อ๊อฟ ปองศักดิ์'], views: 34567890, moods: ['feel_good', 'exercise'] },
   { id: 44, title: 'เธอคือใคร', artists: ['ฟิล์ม รัฐภูมิ'], views: 45678901, moods: ['exercise', 'sad'] },
   { id: 45, title: 'นาทีที่รอ', artists: ['แดน วรเวช'], views: 56789012, moods: ['travel', 'romantic'] },
-];
+]

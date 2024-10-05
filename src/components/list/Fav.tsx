@@ -72,7 +72,7 @@ const Fav: React.FC<FavProps> = ({ mood = '' }) => {
             </button>
           </div>
         </div>
-        <div ref={scrollContainerRef} className="scroll-container flex shrink-0 gap-4 overflow-y-scroll pb-5">
+        <div ref={scrollContainerRef} className="flex shrink-0 gap-4 overflow-y-hidden pb-5">
           {filteredItems.map((item, idx) => (
             <div className="group flex h-full shrink-0 flex-col" key={idx} id={`fav-${item}`}>
               {item.moods?.filter((m) => (mood ? m === mood : m)) && (

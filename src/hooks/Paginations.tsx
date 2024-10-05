@@ -14,12 +14,9 @@ interface PaginationResult<T> {
 function usePagination<T>(data: T[], itemsPerPage: number): PaginationResult<T> {
   const [currentPage, setCurrentPage] = useState(0)
 
-  const totalPages = Math.min(data.length / itemsPerPage,2)
+  const totalPages = Math.min(data.length / itemsPerPage, 2)
 
-  const paginatedData = data.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  )
+  const paginatedData = data.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
 
   const nextPage = () => {
     if (currentPage < totalPages - 1) {

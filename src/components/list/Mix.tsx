@@ -51,7 +51,7 @@ const Mix: React.FC<MixProps> = ({ mood = '' }) => {
         </div>
 
         <div className="pb-16 pt-4">
-          <div className="scroll-container flex shrink-0 gap-5 overflow-y-auto overflow-x-scroll pb-5 pt-4">
+          <div className="scroll-container flex shrink-0 gap-5 overflow-y-auto pb-5 pt-4">
             {paginatedData.map((item, idx) => (
               <div key={idx} className="flex shrink-0 flex-col">
                 <button className="group relative">
@@ -59,8 +59,8 @@ const Mix: React.FC<MixProps> = ({ mood = '' }) => {
                     src={`/mix/${item.id}.jpg`}
                     className="rounded-md group-hover:opacity-90"
                     alt={`${item.id}`}
-                    width={284}
-                    height={284}
+                    width={280}
+                    height={280}
                   />
                   <div className="absolute bottom-4 right-4 flex rounded-full bg-black bg-opacity-50 opacity-0 transition hover:scale-150 hover:bg-opacity-100 group-hover:opacity-100">
                     <Image src={`/svg/play.svg`} alt={`${item.id}`} width={32} height={32} />
@@ -70,9 +70,7 @@ const Mix: React.FC<MixProps> = ({ mood = '' }) => {
                   </div>
                 </button>
                 <div className="flex flex-col pt-2">
-                  <span className="text-md">
-                    มิกซ์ของฉัน {item.id} 
-                  </span>
+                  <span className="text-md">มิกซ์ของฉัน {item.id}</span>
                   <div className="flex text-gray-400">
                     <span>
                       <span className="text-md">

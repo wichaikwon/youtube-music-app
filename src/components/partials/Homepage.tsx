@@ -28,11 +28,7 @@ const HomePage: React.FC<isType> = ({ mood }) => {
     setShuffledComponents(shuffled)
   }, [mood])
 
-  return (
-    <div className="flex flex-col">
-      {shuffledComponents}
-    </div>
-  )
+  return <div>{shuffledComponents}</div>
 }
 
 export default HomePage

@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Kanit } from 'next/font/google'
 import { LayoutContextProvider } from '@/contexts/Layout'
-import {  RouterProvider } from '@/contexts/Router'
+import { SidebarContextProvider } from '@/contexts/Sidebar'
+import { NavbarContextProvider } from '@/contexts/Navbar'
+import { FooterContextProvider } from '@/contexts/Footer'
 
 const kanit = Kanit({
   subsets: ['thai'],
@@ -24,9 +26,13 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/next.svg" />
       <body suppressHydrationWarning className={kanit.className}>
-        <RouterProvider>
-          <LayoutContextProvider>{children}</LayoutContextProvider>
-        </RouterProvider>
+        <LayoutContextProvider>
+          <FooterContextProvider>
+            <SidebarContextProvider>
+              <NavbarContextProvider>{children}</NavbarContextProvider>
+            </SidebarContextProvider>
+          </FooterContextProvider>
+        </LayoutContextProvider>
       </body>
     </html>
   )

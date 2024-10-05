@@ -1,6 +1,6 @@
-import Type from '@/components/buttons/Type'
+import ButtonMoods from '@/components/buttons/ButtonMoods'
 
 const App = () => {
-  return <Type />
+  return <ButtonMoods />
 }
 export default App
